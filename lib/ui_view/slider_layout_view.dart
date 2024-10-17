@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:myapps/constants/constant.dart';
 import 'package:myapps/model/slider.dart';
-import 'package:myapps/ui/homepage/home_page.dart';
 import 'package:myapps/widgets/slide_dots.dart';
 import 'package:myapps/widgets/slide_items/slide_item.dart';
+import 'package:myapps/welcomePage.dart';
 
 class SliderLayoutView extends StatefulWidget {
   const SliderLayoutView({super.key});
@@ -44,9 +44,11 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
   }
 
   @override
-  Widget build(BuildContext context) => topSliderLayout();
+  Widget build(BuildContext context) {
+    return topSliderLayout(context); // Pass context here
+  }
 
-  Widget topSliderLayout() => Container(
+  Widget topSliderLayout(BuildContext context) => Container(
     child: Padding(
       padding: const EdgeInsets.all(10.0),
       child: Stack(
@@ -88,18 +90,23 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                   ),
                 ),
               ),
-           const   Align(
+              Align(
                 alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 15.0, bottom: 15.0),  
-                  child: Text(
-                    Constants.SKIP,
-                    style: TextStyle(
-                      fontFamily: Constants.OPEN_SANS,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14.0,
+                  padding: const EdgeInsets.only(left: 15.0, bottom: 15.0),  
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Welcomepage()));
+                    },
+                    child: const Text(
+                      Constants.SKIP,
+                      style: TextStyle(
+                        fontFamily: Constants.OPEN_SANS,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14.0,
+                      ),
                     ),
-                  ),
+                  )
                 ),
               ),
               Container(
