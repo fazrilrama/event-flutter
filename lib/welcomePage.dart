@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapps/loginPage.dart';
 import 'package:myapps/signup.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Welcomepage extends StatefulWidget {
   const Welcomepage({super.key, this.title});
@@ -95,12 +94,12 @@ class _WelcomepageState extends State<Welcomepage> {
       textAlign: TextAlign.center,
       text: TextSpan(
           text: 'd',
-          style: GoogleFonts.portLligatSans(
-            textStyle: Theme.of(context).textTheme.headlineMedium,
-            fontSize: 30,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
-          ),
+          // style: GoogleFonts.portLligatSans(
+          //   textStyle: Theme.of(context).textTheme.headlineMedium,
+          //   fontSize: 30,
+          //   fontWeight: FontWeight.w700,
+          //   color: Colors.white,
+          // ),
           children: [
             TextSpan(
               text: 'ev',
